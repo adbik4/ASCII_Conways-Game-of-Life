@@ -1,5 +1,4 @@
 import sys
-import os
 import datetime as dt
 
 from board import *
@@ -23,6 +22,7 @@ def usage():
         "3 - white and green\n\n"
         "debug: displays neighbor counts\n"
     )
+
 def error_msg(msg):
     print(msg)
     usage()

@@ -94,6 +94,14 @@ class Board:
                         self.data[col][row] = DEAD
 
     def refresh(self):
+        if self.debug:
+            # refresh the neighbor buffer
+            self.nbr_buf = np.zeros((self.size, self.size), dtype=np.int8)
+            for row in range(self.size):
+                for col in range(self.size):
+                    if self.data[col][row] == ALIVE:
+                        self.__increment_neighbors(row, col)
+
         text_buf = ""
         for row in range(self.size):
             for col in range(self.size):
