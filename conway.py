@@ -87,8 +87,8 @@ def parse_args():
 
 if __name__ == "__main__":
     pattern, theme, debug = parse_args()
-    size = os.get_terminal_size().columns // 2
-    board = Board(size, pattern, theme, debug)
+    board = Board(pattern, theme, debug)
+    board.clear(all=True)
 
     try:
         next_tick = systime()

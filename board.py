@@ -19,11 +19,17 @@ GREEN = "\33[30;102m"
 RAND_THRESH = 0.5
 
 class Board:
-    def __init__(self, size, pattern, theme, debug):
+    def __init__(self, pattern, theme, debug):
         self.debug = debug
         self.theme = theme
-        self.size = size
-        self.data = np.zeros((size, size), dtype=np.int8)
+
+        screen = os.get_terminal_size()
+        if screen.lines > (screen.columns // 2):
+            self.size = screen.columns // 2
+        else:
+            self.size = screen.lines
+
+        self.data = np.zeros((self.size, self.size), dtype=np.int8)
         self.nbr_buf = self.data
 
         match pattern:
