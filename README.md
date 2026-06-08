@@ -1,6 +1,7 @@
 # Conway's Game of Life
 ### A responsive implementation of the classic Conway's Game of Life, in the terminal!
 ![screenshot](image.png)
+![debug](debug.png)
 
 ## How to use
 - Type ```python conway.py``` to view a summary   
